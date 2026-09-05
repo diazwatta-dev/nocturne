@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOCTURNE</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #08070a;
+    --panel: rgba(20,17,23,.88);
+    --text: #eee8f0;
+    --muted: #a79daa;
+    --accent: #b78cff;
+    --border: rgba(255,255,255,.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(145,70,180,.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,70,140,.08),
+            transparent 30%
+        ),
+
+        var(--bg);
+
+    color: var(--text);
+    font-family: Inter, sans-serif;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   GOTHIC BACKGROUND
+========================= */
+
+body::before {
+
+    content:
+        "✦   ☾   ✧   🕸   ✦   ☽   ✧   🕷   ✦";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    color: rgba(255,255,255,.035);
+
+    font-size: 40px;
+
+    line-height: 3;
+
+    word-spacing: 35px;
+
+    transform:
+        rotate(-8deg)
+        scale(1.4);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(14px);
+
+    background:
+        rgba(5,4,7,.78);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.nav-inner {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+
+    font-family: Cinzel, serif;
+
+    letter-spacing: 5px;
+
+    font-size: 20px;
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 8px;
+
+    list-style: none;
+}
+
+.nav-links a {
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    transition: .25s;
+}
+
+.nav-links a:hover {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.07);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 90px 20px;
+
+    animation:
+        fadeUp .8s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.hero {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+
+    font-family: Cinzel, serif;
+
+    font-size:
+        clamp(45px, 10vw, 100px);
+
+    letter-spacing: 12px;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(183,140,255,.35),
+
+        0 0 60px
+        rgba(255,80,150,.12);
+}
+
+.hero-description {
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    max-width: 600px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SASKIA MESSAGE
+========================= */
+
+.special-message {
+
+    margin-top: 45px;
+
+    padding: 28px 35px;
+
+    max-width: 700px;
+
+    border-left:
+        2px solid var(--accent);
+
+    border-right:
+        1px solid
+        rgba(183,140,255,.15);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(183,140,255,.07),
+            rgba(255,255,255,.015),
+            transparent
+        );
+
+    font-family: Cinzel, serif;
+
+    line-height: 1.9;
+
+    animation:
+        messageReveal 2.2s ease both;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(183,140,255,.04);
+}
+
+.special-message .name {
+
+    display: block;
+
+    font-size:
+        clamp(25px, 6vw, 40px);
+
+    letter-spacing: 6px;
+
+    color: #f0e5ff;
+
+    text-shadow:
+
+        0 0 15px
+        rgba(183,140,255,.55);
+}
+
+.special-message .line {
+
+    display: block;
+
+    color: #aaa0ad;
+
+    font-size:
+        clamp(15px, 3vw, 19px);
+}
+
+.special-message .final-line {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #d9baff;
+
+    font-size:
+        clamp(18px, 4vw, 25px);
+
+    text-shadow:
+
+        0 0 15px
+        rgba(183,140,255,.5);
+}
+
+@keyframes messageReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        filter: blur(8px);
+    }
+
+    60% {
+
+        opacity: .7;
+
+        filter: blur(2px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================
+   LOVE BUTTON
+========================= */
+
+.love-button {
+
+    margin-top: 30px;
+
+    padding:
+        13px 28px;
+
+    border:
+        1px solid
+        rgba(183,140,255,.35);
+
+    border-radius: 30px;
+
+    background:
+        rgba(183,140,255,.06);
+
+    color:
+        #d9baff;
+
+    font-family:
+        Cinzel, serif;
+
+    letter-spacing:
+        2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px
+        rgba(183,140,255,.08);
+
+    transition:
+        .3s ease;
+}
+
+.love-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(183,140,255,.12);
+
+    border-color:
+        rgba(183,140,255,.7);
+
+    box-shadow:
+        0 0 25px
+        rgba(183,140,255,.25);
+}
+
+.love-button:active {
+
+    transform:
+        scale(.95);
+}
+
+
+/* =========================
+   LOVE MESSAGE
+========================= */
+
+.love-message {
+
+    margin-top: 20px;
+
+    font-family:
+        Cinzel, serif;
+
+    font-size:
+        clamp(24px, 6vw, 42px);
+
+    letter-spacing:
+        3px;
+
+    color:
+        #e2c8ff;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px)
+        scale(.95);
+
+    filter:
+        blur(6px);
+
+    pointer-events:
+        none;
+
+    transition:
+        .7s ease;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(183,140,255,.5),
+
+        0 0 30px
+        rgba(183,140,255,.25);
+}
+
+.love-message.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+
+    font-family: Cinzel, serif;
+
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+
+    color: var(--muted);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    background: var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow:
+
+        0 15px 50px
+        rgba(0,0,0,.25);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+        rgba(31,25,35,.85);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+}
+
+.music-icon {
+
+    font-size: 35px;
+
+    text-shadow:
+        0 0 15px
+        rgba(183,140,255,.5);
+}
+
+.music-info {
+
+    flex: 1;
+}
+
+.music-info h3 {
+
+    font-family: Cinzel, serif;
+
+    font-size: 22px;
+}
+
+.music-info p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   YOUTUBE
+========================= */
+
+.youtube-player {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(183,140,255,.08);
+}
+
+.youtube-player iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+.about-box h3 {
+
+    font-family: Cinzel, serif;
+
+    margin-bottom: 10px;
+}
+
+.about-box p {
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: #766d7a;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .nav-inner {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+
+        font-size: 13px;
+
+        padding:
+            7px 9px;
+    }
+
+    section {
+
+        padding:
+            65px 15px;
+    }
+
+    .hero h1 {
+
+        letter-spacing: 6px;
+    }
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .music-item {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .special-message {
+
+        padding:
+            20px 18px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <div class="logo">
+            NOCTURNE
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#music">
+                    Music
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+    id="home"
+    class="hero"
+>
+
+    <h1>
+        NOCTURNE
+    </h1>
+
+    <p class="hero-description">
+
+        A little corner of darkness,
+        music, memories and
+        midnight thoughts.
+
+    </p>
+
+
+    <!-- SASKIA -->
+
+    <div class="special-message">
+
+        <span class="name">
+            Saskia.
+        </span>
+
+        <span class="line">
+            S is not for Sayonara.
+        </span>
+
+        <span class="final-line">
+            It is for you.
+        </span>
+
+    </div>
+
+
+    <!-- LOVE BUTTON -->
+
+    <button
+        id="loveButton"
+        class="love-button"
+        type="button"
+    >
+        ♡ Press this
+    </button>
+
+
+    <!-- HIDDEN MESSAGE -->
+
+    <div
+        id="loveMessage"
+        class="love-message"
+    >
+        I Love You.
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section id="music">
+
+    <h2 class="section-title">
+        🎵 Music
+    </h2>
+
+    <p class="section-subtitle">
+
+        One song for the night.
+
+    </p>
+
+
+    <div class="card">
+
+        <div class="music-item">
+
+            <div class="music-icon">
+                ♫
+            </div>
+
+            <div class="music-info">
+
+                <h3>
+                    Helena
+                </h3>
+
+                <p>
+                    My Chemical Romance
+                    • Three Cheers for Sweet Revenge
+                </p>
+
+
+                <div class="youtube-player">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/UCCyoocDxBA"
+                        title="My Chemical Romance - Helena"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        🌙 About
+    </h2>
+
+    <p class="section-subtitle">
+        A personal gothic-themed web space.
+    </p>
+
+
+    <div class="about-grid">
+
+
+        <div class="card about-box">
+
+            <h3>
+                🕸️ The Concept
+            </h3>
+
+            <p>
+
+                NOCTURNE is a dark,
+                atmospheric space for
+                music, memories and
+                aesthetic writing.
+
+            </p>
+
+        </div>
+
+
+        <div class="card about-box">
+
+            <h3>
+                🖤 Philosophy
+            </h3>
+
+            <p>
+
+                Darkness doesn't always
+                mean sadness.
+
+                Sometimes it is simply
+                quiet, mysterious and
+                beautiful.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        ☾ NOCTURNE • made for midnight minds ☽
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   LOVE BUTTON
+========================= */
+
+const loveButton =
+    document.getElementById("loveButton");
+
+const loveMessage =
+    document.getElementById("loveMessage");
+
+
+loveButton.addEventListener(
+    "click",
+    () => {
+
+        loveMessage.classList.toggle("show");
+
+        if (
+            loveMessage.classList.contains("show")
+        ) {
+
+            loveButton.textContent =
+                "♡ Hide message";
+
+        } else {
+
+            loveButton.textContent =
+                "♡ Press this";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+  </html>
