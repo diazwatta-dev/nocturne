@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOCTURNE — Emo Gothic</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #08070a;
+    --panel: rgba(20, 17, 23, 0.88);
+    --panel2: rgba(31, 25, 35, 0.85);
+    --text: #eee8f0;
+    --muted: #a79daa;
+    --accent: #b78cff;
+    --accent2: #ff6fae;
+    --border: rgba(255,255,255,.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(145,70,180,.15), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255,70,140,.08), transparent 30%),
+        var(--bg);
+    color: var(--text);
+    font-family: Inter, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Gothic background */
+
+body::before {
+    content: "✦   ☾   ✧   🕸   ✦   ☽   ✧   🕷   ✦";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    color: rgba(255,255,255,.035);
+    font-size: 40px;
+    line-height: 3;
+    word-spacing: 35px;
+    transform: rotate(-8deg) scale(1.4);
+}
+
+/* NAVBAR */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+    background: rgba(5,4,7,.78);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Cinzel, serif;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 8px;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: white;
+    background: rgba(255,255,255,.07);
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+    animation: fadeUp .8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: Cinzel, serif;
+    font-size: clamp(45px, 10vw, 100px);
+    letter-spacing: 12px;
+    text-shadow:
+        0 0 20px rgba(183,140,255,.35),
+        0 0 60px rgba(255,80,150,.12);
+}
+
+.hero p {
+    margin-top: 20px;
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 16px;
+}
+
+/* SASKIA MESSAGE */
+
+.special-message {
+    margin-top: 40px;
+    padding: 25px 35px;
+    max-width: 700px;
+
+    border-left: 2px solid var(--accent);
+    border-right: 1px solid rgba(183,140,255,.15);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(183,140,255,.07),
+            rgba(255,255,255,.015),
+            transparent
+        );
+
+    font-family: Cinzel, serif;
+    line-height: 1.9;
+
+    animation: messageReveal 2.2s ease both;
+
+    box-shadow:
+        0 0 30px rgba(183,140,255,.04);
+}
+
+.special-message .name {
+    display: block;
+    font-size: clamp(25px, 6vw, 40px);
+    letter-spacing: 6px;
+    color: #f0e5ff;
+
+    text-shadow:
+        0 0 15px rgba(183,140,255,.55);
+}
+
+.special-message .line {
+    display: block;
+    color: #aaa0ad;
+    font-size: clamp(15px, 3vw, 19px);
+}
+
+.special-message .final-line {
+    display: block;
+    margin-top: 5px;
+
+    color: #d9baff;
+    font-size: clamp(18px, 4vw, 25px);
+
+    text-shadow:
+        0 0 15px rgba(183,140,255,.5);
+}
+
+@keyframes messageReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    60% {
+        opacity: .7;
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* HEADINGS */
+
+.section-title {
+    font-family: Cinzel, serif;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+/* CARDS */
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+    backdrop-filter: blur(10px);
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    aspect-ratio: 1 / 1;
+    background: #111;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(.75);
+}
+
+.gallery-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.85)
+    );
+    opacity: 0;
+    transition: .3s;
+}
+
+.gallery-item:hover .gallery-label {
+    opacity: 1;
+}
+
+/* FORM */
+
+.form {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    background: #0e0c11;
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 18px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #7f55b8,
+        #b24b7c
+    );
+    transition: .25s;
+    font-weight: 600;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+}
+
+/* MUSIC */
+
+.music-list {
+    display: grid;
+    gap: 15px;
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 18px;
+}
+
+.music-icon {
+    font-size: 30px;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-info h3 {
+    font-family: Cinzel, serif;
+}
+
+.music-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.about-box h3 {
+    font-family: Cinzel, serif;
+    margin-bottom: 10px;
+}
+
+.about-box p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    color: #766d7a;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    section {
+        padding: 65px 15px;
+    }
+
+    .hero h1 {
+        letter-spacing: 6px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .special-message {
+        padding: 20px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-inner">
+
+        <div class="logo">
+            NOCTURNE
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+    <h1>NOCTURNE</h1>
+
+    <p>
+        A little corner of darkness, music,
+        memories and midnight thoughts.
+    </p>
+
+    <!-- SASKIA MESSAGE -->
+
+    <div class="special-message">
+
+        <span class="name">
+            Saskia.
+        </span>
+
+        <span class="line">
+            S is not for Sayonara.
+        </span>
+
+        <span class="final-line">
+            It is for you.
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+    <h2 class="section-title">🖼️ Gallery</h2>
+
+    <p class="section-subtitle">
+        Add your own image using a direct image URL.
+    </p>
+
+    <div class="card">
+
+        <div class="form">
+
+            <input
+                id="imageURL"
+                type="url"
+                placeholder="https://example.com/image.jpg"
+            >
+
+            <input
+                id="imageTitle"
+                type="text"
+                placeholder="Image title"
+            >
+
+            <button onclick="addImage()">
+                ✦ Add Image
+            </button>
+
+        </div>
+
+        <div id="galleryGrid" class="gallery">
+
+            <div class="gallery-item"
+                 onclick="openLightbox(this.querySelector('img').src)">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
+                    alt="Night sky"
+                >
+
+                <div class="gallery-label">
+                    Midnight
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 onclick="openLightbox(this.querySelector('img').src)">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+                    alt="Dark landscape"
+                >
+
+                <div class="gallery-label">
+                    Lost
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 onclick="openLightbox(this.querySelector('img').src)">
+
+                <img
+                    src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80"
+                    alt="Night landscape"
+                >
+
+                <div class="gallery-label">
+                    Silence
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section id="music">
+
+    <h2 class="section-title">🎵 Music</h2>
+
+    <p class="section-subtitle">
+        Paste a direct audio URL to create your own player.
+    </p>
+
+    <div class="card">
+
+        <div class="form">
+
+            <input
+                id="audioURL"
+                type="url"
+                placeholder="https://example.com/song.mp3"
+            >
+
+            <input
+                id="audioTitle"
+                type="text"
+                placeholder="Song title"
+            >
+
+            <button onclick="addAudio()">
+                ♫ Add Track
+            </button>
+
+        </div>
+
+        <div id="musicList" class="music-list">
+
+            <div class="music-item">
+
+                <div class="music-icon">
+                    ♫
+                </div>
+
+                <div class="music-info">
+
+                    <h3>Midnight Player</h3>
+
+                    <p>Custom audio URL</p>
+
+                    <audio controls>
+                        <source
+                            src=""
+                            type="audio/mpeg"
+                        >
+                    </audio>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">🌙 About</h2>
+
+    <p class="section-subtitle">
+        A personal gothic-themed web space.
+    </p>
+
+    <div class="about-grid">
+
+        <div class="card about-box">
+
+            <h3>🕸️ The Concept</h3>
+
+            <p>
+                NOCTURNE is designed as a dark,
+                atmospheric space for images,
+                music and aesthetic writing.
+            </p>
+
+        </div>
+
+        <div class="card about-box">
+
+            <h3>🖤 Philosophy</h3>
+
+            <p>
+                Darkness doesn't always mean sadness.
+                Sometimes it is simply quiet,
+                mysterious and beautiful.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        ☾ NOCTURNE • made for midnight minds ☽
+    </p>
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div
+    id="lightbox"
+    class="lightbox"
+    onclick="closeLightbox()"
+>
+
+    <span class="close">×</span>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Preview"
+    >
+
+</div>
+
+
+<script>
+
+/* =========================
+   IMAGE SYSTEM
+========================= */
+
+function addImage() {
+
+    const url =
+        document
+        .getElementById("imageURL")
+        .value
+        .trim();
+
+    const title =
+        document
+        .getElementById("imageTitle")
+        .value
+        .trim()
+        || "Untitled";
+
+    if (!url) {
+        alert("Masukkan URL gambar dulu.");
+        return;
+    }
+
+    const item =
+        document.createElement("div");
+
+    item.className = "gallery-item";
+
+    item.innerHTML = `
+        <img src="${escapeHTML(url)}"
+             alt="${escapeHTML(title)}">
+
+        <div class="gallery-label">
+            ${escapeHTML(title)}
+        </div>
+    `;
+
+    item.onclick = function() {
+
+        openLightbox(
+            this.querySelector("img").src
+        );
+
+    };
+
+    document
+        .getElementById("galleryGrid")
+        .appendChild(item);
+
+    saveImage(url, title);
+
+    document.getElementById("imageURL").value = "";
+    document.getElementById("imageTitle").value = "";
+}
+
+
+/* =========================
+   SAVE IMAGES
+========================= */
+
+function saveImage(url, title) {
+
+    const images =
+        JSON.parse(
+            localStorage.getItem("nocturneImages")
+            || "[]"
+        );
+
+    images.push({
+        url: url,
+        title: title
+    });
+
+    localStorage.setItem(
+        "nocturneImages",
+        JSON.stringify(images)
+    );
+}
+
+
+/* =========================
+   LOAD IMAGES
+========================= */
+
+function loadImages() {
+
+    const images =
+        JSON.parse(
+            localStorage.getItem("nocturneImages")
+            || "[]"
+        );
+
+    images.forEach(image => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "gallery-item";
+
+        item.innerHTML = `
+            <img src="${escapeHTML(image.url)}"
+                 alt="${escapeHTML(image.title)}">
+
+            <div class="gallery-label">
+                ${escapeHTML(image.title)}
+            </div>
+        `;
+
+        item.onclick = function() {
+
+            openLightbox(
+                this.querySelector("img").src
+            );
+
+        };
+
+        document
+            .getElementById("galleryGrid")
+            .appendChild(item);
+
+    });
+}
+
+
+/* =========================
+   AUDIO SYSTEM
+========================= */
+
+function addAudio() {
+
+    const url =
+        document
+        .getElementById("audioURL")
+        .value
+        .trim();
+
+    const title =
+        document
+        .getElementById("audioTitle")
+        .value
+        .trim()
+        || "Untitled Track";
+
+    if (!url) {
+        alert("Masukkan URL audio dulu.");
+        return;
+    }
+
+    const item =
+        document.createElement("div");
+
+    item.className = "music-item";
+
+    item.innerHTML = `
+        <div class="music-icon">
+            ♫
+        </div>
+
+        <div class="music-info">
+
+            <h3>${escapeHTML(title)}</h3>
+
+            <p>Custom audio</p>
+
+            <audio controls>
+                <source
+                    src="${escapeHTML(url)}"
+                    type="audio/mpeg"
+                >
+            </audio>
+
+        </div>
+    `;
+
+    document
+        .getElementById("musicList")
+        .appendChild(item);
+
+    saveAudio(url, title);
+
+    document.getElementById("audioURL").value = "";
+    document.getElementById("audioTitle").value = "";
+}
+
+
+/* =========================
+   SAVE AUDIO
+========================= */
+
+function saveAudio(url, title) {
+
+    const tracks =
+        JSON.parse(
+            localStorage.getItem("nocturneAudio")
+            || "[]"
+        );
+
+    tracks.push({
+        url: url,
+        title: title
+    });
+
+    localStorage.setItem(
+        "nocturneAudio",
+        JSON.stringify(tracks)
+    );
+}
+
+
+/* =========================
+   LOAD AUDIO
+========================= */
+
+function loadAudio() {
+
+    const tracks =
+        JSON.parse(
+            localStorage.getItem("nocturneAudio")
+            || "[]"
+        );
+
+    tracks.forEach(track => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "music-item";
+
+        item.innerHTML = `
+            <div class="music-icon">
+                ♫
+            </div>
+
+            <div class="music-info">
+
+                <h3>${escapeHTML(track.title)}</h3>
+
+                <p>Saved track</p>
+
+                <audio controls>
+                    <source
+                        src="${escapeHTML(track.url)}"
+                        type="audio/mpeg"
+                    >
+                </audio>
+
+            </div>
+        `;
+
+        document
+            .getElementById("musicList")
+            .appendChild(item);
+
+    });
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+function openLightbox(url) {
+
+    document
+        .getElementById("lightboxImage")
+        .src = url;
+
+    document
+        .getElementById("lightbox")
+        .classList
+        .add("active");
+}
+
+function closeLightbox() {
+
+    document
+        .getElementById("lightbox")
+        .classList
+        .remove("active");
+}
+
+
+/* =========================
+   BASIC HTML ESCAPE
+========================= */
+
+function escapeHTML(value) {
+
+    return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+
+/* =========================
+   LOAD SAVED CONTENT
+========================= */
+
+loadImages();
+loadAudio();
+
+</script>
+
+</body>
+              </html>
